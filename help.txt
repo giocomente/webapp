@@ -6,4 +6,4 @@ mysql:
     set character_set_results='utf8'; + ...;
 
 seeder:
-    php artisan db:seed --class=[UserSeeder]
+    sail artisan db:seed --class=[UserSeeder]
