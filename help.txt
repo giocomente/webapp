@@ -1,0 +1,9 @@
+﻿sail:
+    alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+
+mysql:
+    show VARIABLES LIKE '%CHAR%';
+    set character_set_results='utf8'; + ...;
+
+seeder:
+    php artisan db:seed --class=[UserSeeder]
