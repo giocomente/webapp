@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB;
+
+use App\Models\Customer;
 
 class CustomerSeeder extends Seeder
 {
@@ -15,8 +17,23 @@ class CustomerSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('customers')->create([
-            'name' => 'Аметист ОПК',
+        Customer::create([
+            'name' => 'КОНСИБ',
+            'price' => 805,
+        ]);
+
+        Customer::create([
+            'name' => 'АВГУСТ',
+            'price' => 825,
+        ]);
+
+        Customer::create([
+            'name' => 'СОЗИНА',
+            'price' => 855,
+        ]);
+
+        Customer::create([
+            'name' => 'ГИНЕС',
             'price' => 855,
         ]);
     }
