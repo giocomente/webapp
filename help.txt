@@ -7,3 +7,14 @@ mysql:
 
 seeder:
     sail artisan db:seed --class=[UserSeeder]
+
+
+Настройка Laravel, Nginx и MySQL с Docker Compose:
+    https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose-ru
+
+
+error - SQLSTATE[HY000] [2002] Connection refused (SQL: select * from:
+    .env:
+        DB_CONNECTION=mysql
+        DB_HOST=mysql
+        DB_PORT=3306
