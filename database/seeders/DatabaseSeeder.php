@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             MaterialSeeder::class,
             FoilSeeder::class,
             OrderSeeder::class,
-            
+            WorkSeeder::class,
         ]);
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Customer;
+use App\Models\Work;
 
 class Order extends Model
 {
@@ -20,5 +21,9 @@ class Order extends Model
 
     public function customer(){
         return $this->belongsTo(Customer::class);
+    }
+
+    public function works(){
+        return $this->hasMany(Work::class);
     }
 }

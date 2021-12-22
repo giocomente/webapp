@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Brand;
 use App\Models\Works;
 
-class Foil extends Model
+class Foil_View extends Model
 {
     // use HasFactory;
     protected $fillable = ['brand_id', 'article', 'name', 'price'];

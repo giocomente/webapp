@@ -15,7 +15,8 @@ class CreateFoilsTable extends Migration
     {
         Schema::create('foils', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('brand_id');
+            //$table->integer('brand_id')->unsigned();
+            $table->foreignId('brand_id')->constrained()->onDelete('cascade');
             $table->string('article', 30);
             $table->string('name', 20);
             $table->integer('price');
