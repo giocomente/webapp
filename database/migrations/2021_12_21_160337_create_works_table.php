@@ -26,10 +26,12 @@ class CreateWorksTable extends Migration
             $table->integer('size_2')->unsigned();
             // $table->integer('foil_size_1_id')->unsigned();
             // $table->foreign('foil_size_1_id')->references('id')->on('foils');
-            $table->foreignId('foil_id')->constrained()->onDelete('cascade');
+            $table->foreignId('foil_id')->constrained('foils')->onDelete('cascade');
             // $table->integer('foil_size_2_id')->unsigned();
             // $table->foreign('foil_size_2_id')->references('id')->on('foils_view');
-            $table->foreignId('foil_view_id')->constrained()->onDelete('cascade');
+            $table->foreignId('foil_view_id')->constrained('foils')->onDelete('cascade');
+            // $table->integer('foil_size_2')->unsigned();
+            // $table->foreign('foil_size_2')->references('id')->on('foil_views');
             $table->string('note');
             $table->timestamps();
         });

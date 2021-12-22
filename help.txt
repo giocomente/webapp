@@ -18,3 +18,9 @@ error - SQLSTATE[HY000] [2002] Connection refused (SQL: select * from:
         DB_CONNECTION=mysql
         DB_HOST=mysql
         DB_PORT=3306
+
+Удаление всех таблиц с последующей миграцией:
+
+    php artisan migrate:fresh
+
+    php artisan migrate:fresh --seed

@@ -27,8 +27,8 @@ class WorkSeeder extends Seeder
             'material_id' => $material->id,
             'size_1' => 600,
             'size_2' => 800,
-            'foil_size_1_id' => 1,
-            'foil_size_2_id' => 2,
+            'foil_id' => 1,
+            'foil_view_id' => 2,
             'note' => 'Их',
         ]);
         $material = Material::where('name', 'SW 24 мм')->first();
@@ -38,8 +38,8 @@ class WorkSeeder extends Seeder
             'material_id' => $material->id,
             'size_1' => 450,
             'size_2' => 1100,
-            'foil_size_1_id' => 4,
-            'foil_size_2_id' => 4,
+            'foil_id' => 4,
+            'foil_view_id' => 4,
             'note' => 'Их',
         ]);
     }

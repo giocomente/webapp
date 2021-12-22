@@ -19,8 +19,8 @@ class Work extends Model
         'material_id',
         'size_1',
         'size_2',
-        'foil_size_1_id',
-        'foil_size_2_id',
+        'foil_id',
+        'foil_view_id',
         'note',
     ];
 
@@ -30,10 +30,10 @@ class Work extends Model
     public function material(){
         return $this->belongsTo(Material::class);
     }
-    public function foil_size_1(){
+    public function foil(){
         return $this->belongsTo(Foil::class);
     }
-    public function foil_size_2(){
-        return $this->belongsTo(Foil_View::class);
+    public function foil_view(){
+        return $this->belongsTo(Foil::class);
     }
 }
