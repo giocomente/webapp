@@ -6,12 +6,30 @@ use Illuminate\Http\Request;
 
 // use Illuminate\Support\Facades\DB;
 
+use App\Models\Work;
+// use App\Models\Order;
+// use App\Models\Foil;
+
 class WorkController extends Controller
 {
     public function index(){
 
         // $works = DB::table('works')->get();
-
-        return view('works');
+        $works = Work::all();
+        $s = "Работы:\r\n\r\n";
+        foreach ($works as $work){
+            // $o =  $work->order;
+            $s .= $work->order->customer->name .  "   " . 
+                $work->order->number_customer .  "   " . 
+                $work->order->invoice .  "   " . 
+                $work->material->name . "   " .
+                $work->size_1 . "   " .
+                $work->size_2 . "   " .
+                $work->foil->name . "   " .
+                $work->foil_view->name . "   " .
+                "\r\n";
+        }
+        return response($s)->header('Content-Type','text/plain');
+        // return view('works');
     }
 }

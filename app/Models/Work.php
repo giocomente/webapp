@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Order;
 use App\Models\Material;
-use App\MOdels\Foil;
-use App\MOdels\Foil_View;
+use App\Models\Foil;
+// use App\MOdels\Foil_View;
 
 class Work extends Model
 {
