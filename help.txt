@@ -21,6 +21,6 @@ error - SQLSTATE[HY000] [2002] Connection refused (SQL: select * from:
 
 Удаление всех таблиц с последующей миграцией:
 
-    php artisan migrate:fresh
+    sail artisan migrate:fresh
 
-    php artisan migrate:fresh --seed
+    sail artisan migrate:fresh --seed

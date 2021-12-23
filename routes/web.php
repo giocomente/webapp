@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CustomersController;
 
+use App\Http\Controllers\WorkController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,4 +21,4 @@ use App\Http\Controllers\CustomersController;
 //     return view('welcome');
 // });
 
-Route::get('/', [CustomersController::class, 'index']);
+Route::get('/', [WorkController::class, 'index']);
