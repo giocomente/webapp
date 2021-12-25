@@ -19,7 +19,7 @@ class WorkSeeder extends Seeder
      */
     public function run()
     {
-        $order = Order::where('id', 2)->first();
+        $order = Order::where('id', 1)->first();
         $material = Material::where('name', 'SW 32 мм')->first();
         Work::create([
             'order_id' => $order->id,
