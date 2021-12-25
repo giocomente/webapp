@@ -19,6 +19,7 @@ class Work extends Model
         'material_id',
         'size_1',
         'size_2',
+        'quantity',
         'foil_id',
         'foil_view_id',
         'note',

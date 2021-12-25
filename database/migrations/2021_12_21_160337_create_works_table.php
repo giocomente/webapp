@@ -24,6 +24,7 @@ class CreateWorksTable extends Migration
             $table->foreignId('material_id')->constrained()->onDelete('cascade');
             $table->integer('size_1')->unsigned();
             $table->integer('size_2')->unsigned();
+            $table->integer('quantity')->unsigned();
             // $table->integer('foil_size_1_id')->unsigned();
             // $table->foreign('foil_size_1_id')->references('id')->on('foils');
             $table->foreignId('foil_id')->constrained('foils')->onDelete('cascade');

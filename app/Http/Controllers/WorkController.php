@@ -25,8 +25,10 @@ class WorkController extends Controller
                 $work->material->name . "   " .
                 $work->size_1 . "   " .
                 $work->size_2 . "   " .
+                $work->quantity . "   " .
                 $work->foil->name . "   " .
                 $work->foil_view->name . "   " .
+                $work->note . "   " .
                 "\r\n";
         }
         return response($s)->header('Content-Type','text/plain');
