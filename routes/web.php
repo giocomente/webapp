@@ -6,6 +6,8 @@ use App\Http\Controllers\CustomersController;
 
 use App\Http\Controllers\WorkController;
 
+use App\Http\Controllers\FoilController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +24,5 @@ use App\Http\Controllers\WorkController;
 // });
 
 Route::get('/', [WorkController::class, 'index']);
+Route::get('/customers', [CustomersController::class, 'index']);
+Route::get('/foils', [FoilController::class, 'index']);

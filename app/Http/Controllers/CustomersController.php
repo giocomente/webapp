@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Customer;
+
 class CustomersController extends Controller
 {
     public function index(){
-        return view('customers');
+        $context = ['customers' => Customer::all()];
+        return view ('customers', $context);
     }
 }

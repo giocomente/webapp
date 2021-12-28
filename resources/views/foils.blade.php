@@ -1,24 +1,28 @@
 ﻿@extends('layouts.master')
 
-@section('title','Клиенты')
+@section('title','Пленки')
 
 @section('content')
     <div class="nav">
         <a href="/">На главную</a>
     </div>
-    <h1 class="my-3 text-centr">Клиенты:</h1>
+    <h1 class="my-3 text-centr">Пленки:</h1>
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Клиент</th>
+                <th>Марка</th>
+                <th>Артикул</th>
+                <th>Нименование</th>
                 <th>Цена</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($customers as $customer)
+            @foreach($foils as $foil)
             <tr>
-                <td>{{ $customer->name }}</td>
-                <td>{{ $customer->price }}</td>
+                <td>{{ $foil->brand->name }}</td>
+                <td>{{ $foil->article }}</td>
+                <td>{{ $foil->name }}</td>
+                <td>{{ $foil->price }}</td>
             </tr>
             @endforeach
         </tbody>
