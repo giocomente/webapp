@@ -10,12 +10,14 @@
     <div class="container">
         @section('nav')
             <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="{{route('works')}}">Работы</a>
-                <a class="navbar-brand" href="{{route('customers')}}">Клиенты</a>
-                <a class="navbar-brand" href="{{route('foils')}}">Пленки</a>
+                <a class="navbar-brand mr-auto" href="{{route('works')}}">Работы</a>
+                <a class="navbar-brand mr-auto" href="{{route('customers')}}">Клиенты</a>
+                <a class="navbar-brand mr-auto" href="{{route('foils')}}">Пленки</a>
             </nav>
         @show
+
         @yield('content')
+        
     </div>
     @section('footerScripts')
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

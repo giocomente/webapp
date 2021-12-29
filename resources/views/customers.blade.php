@@ -4,6 +4,7 @@
 
 @section('nav')
     @parent
+    <a href="{{route ('customer_Add')}}">Добавить</a>
 @endsection('nav')
 
 @section('content')

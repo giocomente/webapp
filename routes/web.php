@@ -24,5 +24,9 @@ use App\Http\Controllers\FoilController;
 // });
 
 Route::get('/', [WorkController::class, 'index'])->name('works');
+
 Route::get('/customers', [CustomersController::class, 'index'])->name('customers');
+Route::get('/customers/add', [CustomersController::class, 'showAddCustomerForm'])->name('customer_Add');
+Route::post('/customers', [CustomersController::class, 'storeCustomer'])->name('customer_store');
+
 Route::get('/foils', [FoilController::class, 'index'])->name('foils');

@@ -12,4 +12,14 @@ class CustomersController extends Controller
         $context = ['customers' => Customer::all()];
         return view ('customers', $context);
     }
+
+    public function showAddCustomerForm(){
+        return view('customer_add');
+    }
+
+    public function storeCustomer(Request $request){
+        Customer::create(['name'=>$request->name,
+                          'price'=>$request->price]);
+        return redirect()->route('customers');
+    }
 }
