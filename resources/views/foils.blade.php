@@ -2,10 +2,12 @@
 
 @section('title','Пленки')
 
+@section('nav')
+    @parent
+@endsection('nav')
+
 @section('content')
-    <div class="nav">
-        <a href="/">На главную</a>
-    </div>
+  
     <h1 class="my-3 text-centr">Пленки:</h1>
     <table class="table table-striped">
         <thead>

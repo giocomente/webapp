@@ -23,6 +23,6 @@ use App\Http\Controllers\FoilController;
 //     return view('welcome');
 // });
 
-Route::get('/', [WorkController::class, 'index']);
-Route::get('/customers', [CustomersController::class, 'index']);
-Route::get('/foils', [FoilController::class, 'index']);
+Route::get('/', [WorkController::class, 'index'])->name('works');
+Route::get('/customers', [CustomersController::class, 'index'])->name('customers');
+Route::get('/foils', [FoilController::class, 'index'])->name('foils');

@@ -8,6 +8,13 @@
 </head>
 <body>
     <div class="container">
+        @section('nav')
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="{{route('works')}}">Работы</a>
+                <a class="navbar-brand" href="{{route('customers')}}">Клиенты</a>
+                <a class="navbar-brand" href="{{route('foils')}}">Пленки</a>
+            </nav>
+        @show
         @yield('content')
     </div>
     @section('footerScripts')

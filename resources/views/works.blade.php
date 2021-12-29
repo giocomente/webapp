@@ -2,14 +2,12 @@
 
 @section('title','Работы')
 
+@section('nav')
+    @parent
+@endsection('nav')
+
 @section('content')
-    <div class="nav">
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="/customers">Клиенты</a>
-            <a class="navbar-brand" href="/foils">Пленки</a>
-        </nav>
-        
-    </div>
+    
     <h1 class="my-3 text-centr">Работы:</h1>
     <table class="table table-striped">
         <thead>
