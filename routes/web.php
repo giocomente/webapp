@@ -30,3 +30,5 @@ Route::get('/customers/create', [CustomersController::class, 'create'])->name('c
 Route::post('/customers', [CustomersController::class, 'store'])->name('customer_store');
 
 Route::get('/foils', [FoilController::class, 'index'])->name('foils');
+Route::get('/foils/create', [FoilController::class, 'create'])->name('foil_create');
+Route::post('/foils', [FoilController::class, 'store'])->name('foil_store');

@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         @section('nav')
-            <nav class="navbar navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand mr-auto" href="{{route('works')}}">Работы</a>
                 <a class="navbar-brand mr-auto" href="{{route('customers')}}">Клиенты</a>
                 <a class="navbar-brand mr-auto" href="{{route('foils')}}">Пленки</a>

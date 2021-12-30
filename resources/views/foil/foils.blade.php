@@ -4,6 +4,7 @@
 
 @section('nav')
     @parent
+    <a href="{{route ('foil_create')}}">Добавить</a>
 @endsection('nav')
 
 @section('content')
