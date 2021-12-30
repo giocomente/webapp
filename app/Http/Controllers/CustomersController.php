@@ -4,22 +4,31 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\StoreCustomerRequest;
+
 use App\Models\Customer;
 
-class CustomersController extends Controller
-{
+
+class CustomersController extends Controller{
+
     public function index(){
         $context = ['customers' => Customer::all()];
-        return view ('customers', $context);
+        return view ('customer.customers', $context);
     }
 
-    public function showAddCustomerForm(){
-        return view('customer_add');
+    public function create(){
+        return view('customer.create');
     }
 
-    public function storeCustomer(Request $request){
-        Customer::create(['name'=>$request->name,
-                          'price'=>$request->price]);
+    public function store(StoreCustomerRequest $request){
+
+        //$validated = $request->validated();
+
+        Customer::create([
+            'name'=>$request->name,
+            'price'=>$request->price
+        ]);
+
         return redirect()->route('customers');
     }
 }
