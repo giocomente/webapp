@@ -4,6 +4,7 @@
 
 @section('nav')
     @parent
+    <!-- <a href="{{route ('order_create')}}">Добавить Заказ</a> -->
 @endsection('nav')
 
 @section('content')

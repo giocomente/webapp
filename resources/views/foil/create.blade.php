@@ -17,11 +17,13 @@
 @endif
 
 @section('content')
+    <div class="container">
+
     <form action="{{route('foil_store')}}" method="post">
         @csrf
         <div class="form-group">
             <label for="brand-select">Марка:</label>
-            <select name="brand_id" id="brand-select">
+            <select name="brand_id" id="brand-select" class="form-select" aria-label="Default select example">
                 @foreach($brands as $brand)
                     <option value={{ $brand->id }}>
                         {{ $brand->name }}
@@ -47,6 +49,8 @@
 
         <input type="submit" class="btn btn-primary" value="Добавить">
     </form>
+
+    </div>
 @endsection
 
 @section('footerScripts')
