@@ -17,19 +17,19 @@
 @endif
 
 @section('content')
-<div class="container">
+<div class="container mt-3">
     <form action="{{route('order_store')}}" method="post">
         @csrf
 
         <div class="form-group">
             <label for="date-start">Дата:</label>
-            <input name="date_start" value="{{Carbon\Carbon::now()->timezone('Europe/Samara')->format('d-m-Y H:i:s')}}"  id="date-start" class="form-control">
+            <input name="date_start" readonly value="{{Carbon\Carbon::now()->timezone('Europe/Samara')->format('d-m-Y H:i:s')}}"  id="date-start" class="form-control">
         </div>
 
         <div class="form-group">
             <label for="customer-select">Клиент:</label>
             <select name="customer_id" id="customer-select" class="form-select" aria-label="Default select example">
-    
+                <!-- <option selected>- Клиент -</option> -->
                 @foreach($customers as $customer)
                     <option value={{ $customer->id }}>
                         {{ $customer->name }}
@@ -53,7 +53,7 @@
             <input name="note" id="order-note" class="form-control">
         </div>
 
-        <input type="submit" class="btn btn-primary" value="Добавить">
+        <input type="submit" class="btn btn-primary mt-3" value="Перейти к работам">
     </form>
 </div>
 @endsection
