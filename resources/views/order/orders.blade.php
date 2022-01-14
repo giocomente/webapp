@@ -28,7 +28,7 @@
                 <td>{{ $order->number_customer }}</td>
                 <td>{{ $order->invoice }}</td>
                 <td>{{ $order->note }}</td>
-                <td><a href="{{route ('orderWorks', ['order_id' => $order->id])}}">show</a></td>
+                <td><a href="{{route ('orderWorks', ['order_id' => $order->id])}}">>>></a></td>
             </tr>
             @endforeach
         </tbody>
