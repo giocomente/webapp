@@ -30,6 +30,9 @@
             <label for="customer-select">Клиент:</label>
             <select name="customer_id" id="customer-select" class="form-select" aria-label="Default select example">
                 <!-- <option selected>- Клиент -</option> -->
+                <option value={{ null }}>
+                        - Выбор Клиента -
+                    </option>
                 @foreach($customers as $customer)
                     <option value={{ $customer->id }}>
                         {{ $customer->name }}

@@ -36,5 +36,6 @@ Route::get('/foils/create', [FoilController::class, 'create'])->name('foil_creat
 Route::post('/foils', [FoilController::class, 'store'])->name('foil_store');
 
 Route::get('/orders', [OrderController::class, 'index'])->name('orders');
+Route::get('/orders/{order_id}', [OrderController::class, 'show'])->name('orderWorks');
 Route::get('/orders/create', [OrderController::class, 'create'])->name('order_create');
 Route::post('/orders', [OrderController::class, 'store'])->name('order_store');
