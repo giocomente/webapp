@@ -8,32 +8,19 @@
 @endsection('nav')
 
 @section('content')
-  <!-- Таблица заказы -->
-  <!-- <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Дата</th>
-        <th>Клиент</th>
-        <th>Номер</th>
-        <th>Счет</th>
-        <th>Примечание</th>
-      </tr>
-    </thead>
-    <tbody> -->
-      @foreach($orders as $order)
-        <!-- <tr>
-          <td>{{ $order->date_start }}</td>
-          <td>{{ $order->customer->name }}</td>
-          <td>{{ $order->number_customer }}</td>
-          <td>{{ $order->invoice }}</td>
-          <td>{{ $order->note }}</td>
-        </tr> -->
-        <div class="container">
-          <div class="container">
-            <time datetime="<дата и время>">{{ $order->date_start }}</time>
+<div class="container">
+  <div class="row">
+
+    @foreach($orders as $order) 
+      <div class="col-3 border">
+        <!-- <div class="container"> -->
+          <div class="row">
+            <div class="col text-center">{{ Carbon\Carbon::parse($order->date_start)->format('d-m-Y') }}</div>
+            <div class="col">{{ Carbon\Carbon::parse($order->date_start)->format('H:i:s') }}</div>
           </div>
           <div class="container">
-            <p>{{ $order->customer->name }} - {{ $order->number_customer }}</p>
+            <p class="h5 text-center">{{ $order->customer->name }}</p>
+            <p> № {{ $order->number_customer }}</p>
           </div>
           <div class="container">
             <p>Счёт: {{ $order->invoice }}</p>
@@ -41,19 +28,22 @@
           <div class="container">
             <p>{{ $order->note }}</p>
           </div>
-        </div>
+        <!-- </div> -->
+      </div>
+
+      <div class="col-9 border">
         <div class="container">
           <!-- Подтаблица работы -->
           <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Материал</th>
-                    <th>Ширина</th>
-                    <th>Высота</th>
-                    <th>Количество</th>
-                    <th>Цвет 1ая сторона</th>
-                    <th>Цвет 2ая сторона</th>
-                    <th>Примечание</th>
+                    <th>Ш</th>
+                    <th>В</th>
+                    <th>Кол-во</th>
+                    <th>Цвет 1</th>
+                    <th>Цвет 2</th>
+                    <th>Прим.</th>
                 </tr>
             </thead>
             <tbody>
@@ -63,20 +53,22 @@
                     <td>{{ $work->size_1 }}</td>
                     <td>{{ $work->size_2 }}</td>
                     <td>{{ $work->quantity }}</td>
-                    <td>{{ $work->foil->name }}</td>
-                    <td>{{ $work->foil_view->name }}</td>
+                    <td>{{ $work->foil->article }}</td>
+                    <td>{{ $work->foil_view->article }}</td>
                     <td>{{ $work->note }}</td>
                 </tr>
                 @endforeach
             </tbody>
           </table>
         </div>
-        <hr>
+      </div>
 
-      @endforeach
-    <!-- </tbody>
-  </table> -->
+      <!-- <hr> -->
 
+    @endforeach
+      
+  </div>
+</div>
 @endsection
 
 @section('footerScripts')

@@ -32,7 +32,7 @@ class CreateWorksTable extends Migration
             
             $table->foreignId('foil_view_id')->constrained('foils')->onDelete('cascade');
            
-            $table->string('note')->nullable();
+            $table->string('note', 100)->nullable();
 
             $table->timestamps();
         });
