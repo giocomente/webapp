@@ -24,7 +24,10 @@ class StoreWorkRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'material_id' => 'required',
+            'size_1' => 'required',
+            'size_2' => 'required',
+            'quantity' => 'required',
         ];
     }
 }

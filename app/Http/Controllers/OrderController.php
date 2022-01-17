@@ -48,6 +48,7 @@ class OrderController extends Controller
             'note' => $request->note,
         ]);
         $works = Work::where('order_id', $order->id)->get();
+        // $works = $order->works();
         $context = ['order' => $order, 'works' => $works];
         return view('orderWorks', $context);
         //return redirect()->route('orders');
@@ -59,6 +60,7 @@ class OrderController extends Controller
         //$works = Work::select('order_id', $order_id);
         //$works = Work::all();
         $works = Work::where('order_id', $order_id)->get();
+        // $works = $order->works();
         $context = ['order' => $order, 'works' => $works];
         //$customer = $order->note;
         //return ($works[1]->size_1);

@@ -25,5 +25,5 @@ error - SQLSTATE[HY000] [2002] Connection refused (SQL: select * from:
 
     sail artisan migrate:fresh --seed
 
-Запрос формы:
+Создание запроса формы:
     sail artisan make:request [StoreCustomerRequest]

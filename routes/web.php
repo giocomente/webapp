@@ -10,6 +10,8 @@ use App\Http\Controllers\FoilController;
 
 use App\Http\Controllers\OrderController;
 
+use App\Http\Controllers\OrderWorksController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,3 +44,5 @@ Route::post('/orders', [OrderController::class, 'store'])->name('order_store');
 
 Route::get('/works/create/{order_id}', [WorkController::class, 'create'])->name('work_create');
 Route::post('/works', [WorkController::class, 'store'])->name('work_store');
+
+Route::get('/ordersworks', [OrderWorksController::class, 'index'])->name('orders_works');

@@ -20,8 +20,9 @@
 <div class="container mt-3">
     <form action="{{route('work_store')}}" method="post">
         @csrf
+
         <div class="form-group">
-            <input name="order_id"  value={{ $order_id }} class="form-control">
+            <input type="hidden" name="order_id"  value={{ $order_id }} class="form-control">
         </div>
 
         <div class="form-group">
@@ -58,9 +59,9 @@
             <label for="foil-select">Цвет 1:</label>
             <select name="foil_id" id="foil-select" class="form-select" aria-label="Default select example">
                 <!-- <option selected>- Клиент -</option> -->
-                <option value={{ null }}>
+                <!-- <option value={{ null }}>
                     - Выбор пленки -
-                </option>
+                </option> -->
                 @foreach($foils as $foil)
                     <option value={{ $foil->id }}>
                         {{ $foil->article }}
@@ -73,9 +74,9 @@
             <label for="foil_view-select">Цвет 2:</label>
             <select name="foil_view_id" id="foil_view-select" class="form-select" aria-label="Default select example">
                 <!-- <option selected>- Клиент -</option> -->
-                <option value={{ null }}>
+                <!-- <option value={{ null }}>
                     - Выбор пленки -
-                </option>
+                </option> -->
                 @foreach($foils as $foil)
                     <option value={{ $foil->id }}>
                         {{ $foil->article }}

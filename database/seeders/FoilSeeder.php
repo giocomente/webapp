@@ -20,6 +20,13 @@ class FoilSeeder extends Seeder
 
         Foil::create([
             'brand_id' => $brand->id,
+            'article' => '-----',
+            'name' => '-----',
+            'price' => 0,
+        ]);
+
+        Foil::create([
+            'brand_id' => $brand->id,
             'article' => 'UQ901',
             'name' => 'Коричневый дуб',
             'price' => 325,
