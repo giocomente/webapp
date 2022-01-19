@@ -17,8 +17,8 @@
     </div> -->
 
   <div class="row">
-
     @foreach($orders as $order) 
+      
       <div class="col-3 border">
       
         <div class="container">
