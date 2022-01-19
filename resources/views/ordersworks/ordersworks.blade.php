@@ -4,46 +4,68 @@
 
 @section('nav')
     @parent
-    <!-- <a href="{{route ('order_create')}}">Добавить Заказ</a> -->
+    <a href="{{route ('order_create')}}">Добавить Заказ</a>
 @endsection('nav')
 
 @section('content')
-<div class="container">
+<div class="container mt-1">
+
+    <!-- <div class="container">
+        <div class="alert alert-success mt-5" role="alert">
+            Boostrap 5 is working!
+        </div>    
+    </div> -->
+
   <div class="row">
 
     @foreach($orders as $order) 
       <div class="col-3 border">
-        <!-- <div class="container"> -->
-          <div class="row">
-            <div class="col text-center">{{ Carbon\Carbon::parse($order->date_start)->format('d-m-Y') }}</div>
-            <div class="col">{{ Carbon\Carbon::parse($order->date_start)->format('H:i:s') }}</div>
-          </div>
-          <div class="container">
-            <p class="h5 text-center">{{ $order->customer->name }}</p>
-            <p> № {{ $order->number_customer }}</p>
-          </div>
-          <div class="container">
-            <p>Счёт: {{ $order->invoice }}</p>
-          </div>
-          <div class="container">
-            <p>{{ $order->note }}</p>
-          </div>
-        <!-- </div> -->
+      
+        <div class="container">
+          {{ Carbon\Carbon::parse($order->date_start)->format('d-m-Y') }}
+          <small>
+            <em>{{ Carbon\Carbon::parse($order->date_start)->format('H:i:s') }}</em>
+          </small>
+        </div>
+
+        <div class="container h5 text-center">
+          {{ $order->customer->name }}
+        </div>
+
+        <div class="container">
+          № {{ $order->number_customer }}
+        </div>
+
+        <div class="container">
+          Счёт: {{ $order->invoice }}
+        </div>
+
+        <div class="container">
+          {{ $order->note }}
+        </div>
+
+        <div class="container text-end mb-3">
+          
+          <a href=""><em>изменить</em></a>
+          
+        </div>
+
       </div>
 
       <div class="col-9 border">
-        <div class="container">
+        <!-- <div class="container"> -->
           <!-- Подтаблица работы -->
-          <table class="table table-striped">
+          <table class="table table-sm">
+          <caption>Общая площадь: </caption>
             <thead>
                 <tr>
-                    <th>Материал</th>
-                    <th>Ш</th>
-                    <th>В</th>
-                    <th>Кол-во</th>
-                    <th>Цвет 1</th>
-                    <th>Цвет 2</th>
-                    <th>Прим.</th>
+                    <th scope="col">Материал</th>
+                    <th scope="col">Ш</th>
+                    <th scope="col">В</th>
+                    <th scope="col">Кол-во</th>
+                    <th scope="col">Цвет 1</th>
+                    <th scope="col">Цвет 2</th>
+                    <th scope="col">Прим.</th>
                 </tr>
             </thead>
             <tbody>
@@ -60,7 +82,7 @@
                 @endforeach
             </tbody>
           </table>
-        </div>
+        <!-- </div> -->
       </div>
 
       <!-- <hr> -->

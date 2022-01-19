@@ -27,3 +27,6 @@ error - SQLSTATE[HY000] [2002] Connection refused (SQL: select * from:
 
 Создание запроса формы:
     sail artisan make:request [StoreCustomerRequest]
+
+3 way to install bootstrap 5 in laravel 8
+    https://larainfo.com/blogs/3-way-to-install-bootstrap-5-in-laravel-8
