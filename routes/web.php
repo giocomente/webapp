@@ -29,13 +29,15 @@ use App\Http\Controllers\OrderWorksController;
 
 Route::get('/', [WorkController::class, 'index'])->name('works');
 
-Route::get('/customers', [CustomersController::class, 'index'])->name('customers');
-Route::get('/customers/create', [CustomersController::class, 'create'])->name('customer_create');
-Route::post('/customers', [CustomersController::class, 'store'])->name('customer_store');
+Route::get('/customers', [CustomerController::class, 'index'])->name('customers');
+Route::post('/customers', [CustomerController::class, 'store'])->name('customer_store');
+Route::get('/customers/create', [CustomerController::class, 'create'])->name('customer_create');
+
 
 Route::get('/foils', [FoilController::class, 'index'])->name('foils');
-Route::get('/foils/create', [FoilController::class, 'create'])->name('foil_create');
 Route::post('/foils', [FoilController::class, 'store'])->name('foil_store');
+Route::get('/foils/create', [FoilController::class, 'create'])->name('foil_create');
+
 
 Route::get('/orders', [OrderController::class, 'index'])->name('orders');
 Route::post('/orders', [OrderController::class, 'store'])->name('order_store');

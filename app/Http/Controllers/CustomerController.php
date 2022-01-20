@@ -9,7 +9,7 @@ use App\Http\Requests\StoreCustomerRequest;
 use App\Models\Customer;
 
 
-class CustomersController extends Controller{
+class CustomerController extends Controller{
 
     public function index(){
         $context = ['customers' => Customer::all()];
