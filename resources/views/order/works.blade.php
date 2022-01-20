@@ -30,7 +30,7 @@
     
     <h3 class="my-3 text-centr">Работы:</h3>
 
-    <a href="{{route ('work_create', [$order])}}">Добавить работу</a>
+    <a href="{{route ('work_create', [$order->id])}}">Добавить работу</a>
 
     <table class="table table-striped">
         <thead>

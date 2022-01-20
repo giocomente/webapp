@@ -21,10 +21,10 @@ class WorkController extends Controller
         
     } 
 
-    public function create($order){
+    public function create($order_id){
 
         $context = [
-            'order' => $order,
+            'order_id' => $order_id,
             'materials' => Material::all(),
             'foils'=> Foil::all(),
         ];
@@ -32,9 +32,8 @@ class WorkController extends Controller
     }
 
     public function store(StoreWorkRequest $request){
-        $order_id = $request->order_id;
         Work::create([
-            'order_id' => $order_id,
+            'order_id' => $request->order_id,
             'status' => 0,
             'material_id' => $request->material_id,
             'size_1' => $request->size_1,
@@ -44,7 +43,7 @@ class WorkController extends Controller
             'foil_view_id' => $request->foil_view_id,
             'note' => $request->note,
         ]);
-        $order = Order::where('id', $order_id)->first();
+        $order = Order::where('id', $request->order_id)->first();
         
         // $works = Work::where('order_id', $order_id)->get();
         // $context = ['order' => $order, 'works' => $works];
