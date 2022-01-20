@@ -17,8 +17,8 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->datetime('date_start');
             $table->foreignId('customer_id')->constrained()->onDelete('cascade');
-            $table->string('number_customer', 20);
-            $table->string('invoice', 20);
+            $table->string('number_customer', 20)->nullable();
+            $table->string('invoice', 20)->nullable();
             $table->string('note', 100)->nullable();
             $table->timestamps();
         });

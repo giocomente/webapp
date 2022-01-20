@@ -17,7 +17,7 @@ class OrderController extends Controller
 {
     public function index(){
         $context = ['orders' => Order::all()];
-        return view ('order.orders', $context);
+        return view ('order.index', $context);
     }
 
     public function create(){
@@ -35,15 +35,17 @@ class OrderController extends Controller
             'invoice' => $request->invoice,
             'note' => $request->note,
         ]);
-        $works = Work::where('order_id', $order->id)->get();
-        $context = ['order' => $order, 'works' => $works];
-        return view('orderWorks', $context);
+        // $works = Work::where('order_id', $order->id)->get();
+        // $context = ['order' => $order, 'works' => $works];
+        
+        $context = ['order' => $order];
+        return view('order.works', $context);
     }
 
     public function show($order_id){
-        $order = Order::where('id', $order_id)->first();
-        $works = Work::where('order_id', $order_id)->get();
-        $context = ['order' => $order, 'works' => $works];;
-        return view('orderWorks', $context);
+        // $order = Order::where('id', $order_id)->first();
+        // $works = Work::where('order_id', $order_id)->get();
+        // $context = ['order' => $order, 'works' => $works];;
+        // return view('orderWorks', $context);
     }
 }

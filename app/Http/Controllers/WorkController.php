@@ -17,15 +17,14 @@ class WorkController extends Controller
 {
     public function index(){
 
-        $context = ['works' => Work::all()];
-        return view ('works', $context);
+        //
         
     } 
 
-    public function create($order_id){
+    public function create($order){
 
         $context = [
-            'order_id' => $order_id,
+            'order' => $order,
             'materials' => Material::all(),
             'foils'=> Foil::all(),
         ];
@@ -47,11 +46,10 @@ class WorkController extends Controller
         ]);
         $order = Order::where('id', $order_id)->first();
         
-        $works = Work::where('order_id', $order_id)->get();
-        $context = ['order' => $order, 'works' => $works];
-        
-        return view('orderWorks', $context);
-        //return redirect()->route('foils');
+        // $works = Work::where('order_id', $order_id)->get();
+        // $context = ['order' => $order, 'works' => $works];
+        $context = ['order' => $order];
+        return view('order.works', $context);
     }
 
 }
