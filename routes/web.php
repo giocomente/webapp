@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\CustomerController;
 
 use App\Http\Controllers\WorkController;
 
@@ -41,7 +41,12 @@ Route::get('/foils/create', [FoilController::class, 'create'])->name('foil_creat
 
 Route::get('/orders', [OrderController::class, 'index'])->name('orders');
 Route::post('/orders', [OrderController::class, 'store'])->name('order_store');
+Route::delete('orders/{order_id}', [OrderController::class, 'destroy'])->name('order.destroy');
 Route::get('/orders/create', [OrderController::class, 'create'])->name('order_create');
+
+
+
+
 
 // Route::get('/orders/{order_id}', [OrderController::class, 'show'])->name('orderWorks');
 

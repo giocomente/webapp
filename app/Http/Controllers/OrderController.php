@@ -16,7 +16,8 @@ use App\Http\Requests\StoreOrderRequest;
 class OrderController extends Controller
 {
     public function index(){
-        $context = ['orders' => Order::all()];
+        // Все заказы - сортировка сначала новые
+        $context = ['orders' => Order::latest()->get()];
         return view ('order.index', $context);
     }
 
@@ -47,5 +48,15 @@ class OrderController extends Controller
         // $works = Work::where('order_id', $order_id)->get();
         // $context = ['order' => $order, 'works' => $works];;
         // return view('orderWorks', $context);
+    }
+
+    public function destroy($order_id)
+    {
+        // DELETE — идемпотентный метод, поэтому результат операции всегда один и тот же
+        $order = Order::find($order_id);
+        if ($order) {
+        $order->delete();
+        }
+        return redirect()->route('orders');
     }
 }
