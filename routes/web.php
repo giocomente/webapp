@@ -43,6 +43,9 @@ Route::get('/orders', [OrderController::class, 'index'])->name('orders');
 Route::post('/orders', [OrderController::class, 'store'])->name('order_store');
 Route::delete('orders/{order_id}', [OrderController::class, 'destroy'])->name('order.destroy');
 Route::get('/orders/create', [OrderController::class, 'create'])->name('order_create');
+Route::get('/order/edit/{order_id}', [OrderController::class, 'show'])->name('order.show');
+Route::post('/order/edit/{order_id}', [OrderController::class, 'edit'])->name('order.edit');
+
 
 
 

@@ -44,10 +44,11 @@ class OrderController extends Controller
     }
 
     public function show($order_id){
-        // $order = Order::where('id', $order_id)->first();
-        // $works = Work::where('order_id', $order_id)->get();
-        // $context = ['order' => $order, 'works' => $works];;
-        // return view('orderWorks', $context);
+        // echo "Record NOT updated successfully.<br/>";
+        $order = Order::where('id', $order_id)->first();
+        $customers = Customer::all();
+        $context = ['order' => $order, 'customers' => $customers];;
+        return view('order.show', $context);
     }
 
     public function destroy($order_id)
@@ -59,4 +60,19 @@ class OrderController extends Controller
         }
         return redirect()->route('orders');
     }
+
+    public function edit(Request $request, $order_id) {
+
+        // $name = $request->input('stud_name');
+        // DB::update('update student set name = ? where id = ?',[$name,$id]);
+        Order::where('id', $order_id)->update([
+                'date_start' =>  $request->date_start,
+                'customer_id' => $request->customer_id, 
+                'number_customer' => $request->number_customer,
+                'invoice' => $request->invoice,
+                'note' => $request->note,
+            ]);
+        // echo "Record {{$order_id}} NOT updated successfully.<br/>";
+        return redirect()->route('orders');
+     }
 }
