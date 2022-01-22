@@ -56,7 +56,7 @@
             <input name="note" id="order-note" class="form-control">
         </div>
 
-        <input type="submit" class="btn btn-primary mt-3" value="Перейти к работам">
+        <input type="submit" class="btn btn-primary mt-3" value="Сохранить и перейти к работам">
     </form>
 </div>
 @endsection
