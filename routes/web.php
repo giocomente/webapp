@@ -40,9 +40,9 @@ Route::get('/foils/create', [FoilController::class, 'create'])->name('foil_creat
 
 
 Route::get('/orders', [OrderController::class, 'index'])->name('orders');
-Route::post('/orders', [OrderController::class, 'store'])->name('order_store');
+Route::post('/orders', [OrderController::class, 'store'])->name('order.store');
 Route::delete('orders/{order_id}', [OrderController::class, 'destroy'])->name('order.destroy');
-Route::get('/orders/create', [OrderController::class, 'create'])->name('order_create');
+Route::get('/orders/create', [OrderController::class, 'create'])->name('order.create');
 Route::get('/order/edit/{order_id}', [OrderController::class, 'show'])->name('order.show');
 Route::post('/order/edit/{order_id}', [OrderController::class, 'edit'])->name('order.edit');
 
@@ -53,5 +53,5 @@ Route::post('/order/edit/{order_id}', [OrderController::class, 'edit'])->name('o
 
 // Route::get('/orders/{order_id}', [OrderController::class, 'show'])->name('orderWorks');
 
-Route::get('/works/create/{order_id}', [WorkController::class, 'create'])->name('work_create');
-Route::post('/works', [WorkController::class, 'store'])->name('work_store');
+Route::get('/works/create/{order_id}', [WorkController::class, 'create'])->name('work.create');
+Route::post('/works', [WorkController::class, 'store'])->name('work.store');

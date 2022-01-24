@@ -47,7 +47,7 @@ class OrderController extends Controller
         // echo "Record NOT updated successfully.<br/>";
         $order = Order::where('id', $order_id)->first();
         $customers = Customer::all();
-        $context = ['order' => $order, 'customers' => $customers];;
+        $context = ['order' => $order, 'customers' => $customers];
         return view('order.show', $context);
     }
 

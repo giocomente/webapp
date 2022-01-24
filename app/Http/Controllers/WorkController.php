@@ -10,6 +10,7 @@ use App\Models\Work;
 use App\Models\Material;
 use App\Models\Foil;
 use App\Models\Order;
+use App\Models\Customer;
 
 use App\Http\Requests\StoreWorkRequest;
 
@@ -44,11 +45,12 @@ class WorkController extends Controller
             'note' => $request->note,
         ]);
         $order = Order::where('id', $request->order_id)->first();
+        $customers = Customer::all();
         
         // $works = Work::where('order_id', $order_id)->get();
         // $context = ['order' => $order, 'works' => $works];
-        $context = ['order' => $order];
-        return view('order.works', $context);
+        $context = ['order' => $order, 'customers' => $customers];
+        return view('order.show', $context);
     }
 
 }

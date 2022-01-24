@@ -18,7 +18,7 @@
 
 @section('content')
 <div class="container mt-3">
-    <form action="{{route('work_store')}}" method="post">
+    <form action="{{route('work.store')}}" method="post">
         @csrf
 
         <div class="form-group">
