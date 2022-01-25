@@ -1,6 +1,9 @@
 ﻿sail:
     alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
+Generate a model and a migration, seeder, and controller...:
+    sail artisan make:model [NameModel] -msc
+
 mysql:
     show VARIABLES LIKE '%CHAR%';
     set character_set_results='utf8'; + ...;
