@@ -55,3 +55,4 @@ Route::post('/order/edit/{order_id}', [OrderController::class, 'edit'])->name('o
 
 Route::get('/works/create/{order_id}', [WorkController::class, 'create'])->name('work.create');
 Route::post('/works', [WorkController::class, 'store'])->name('work.store');
+Route::get('/works/output/{work_id}', [WorkController::class, 'output'])->name('work.output');

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Order;
 use App\Models\Material;
 use App\Models\Foil;
-// use App\MOdels\Foil_View;
+use App\MOdels\Output;
 
 class Work extends Model
 {
@@ -36,5 +36,8 @@ class Work extends Model
     }
     public function foil_view(){
         return $this->belongsTo(Foil::class);
+    }
+    public function output(){
+        return $this->hasOne(Output::class);
     }
 }

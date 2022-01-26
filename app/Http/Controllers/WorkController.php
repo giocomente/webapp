@@ -11,6 +11,7 @@ use App\Models\Material;
 use App\Models\Foil;
 use App\Models\Order;
 use App\Models\Customer;
+use App\Models\Output;
 
 use App\Http\Requests\StoreWorkRequest;
 
@@ -52,5 +53,24 @@ class WorkController extends Controller
         $context = ['order' => $order, 'customers' => $customers];
         return view('order.show', $context);
     }
+
+    public function output($work_id){
+        $output = Output::where('work_id', $work_id)->first();
+        if(is_null($output)){
+            Output::create(['work_id' => $work_id, ]);
+        }
+        else{
+            echo("Запись уже в работе!");
+        }
+        //echo(dd($output));
+        // Output::create([
+        //     'work_id' => $work_id,
+        // ]);
+        
+        $outputs = Output::all();
+        echo(dd($outputs->count()));
+        return ;
+    }
+
 
 }
